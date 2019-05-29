@@ -1,18 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+
+const StyledWrapper = styled.div`
+  background-color: #545454;
+  height: 100vh;
+  width: 100%;
+`;
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-        Learn React Learn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn
-        ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn ReactLearn
-        ReactLearn ReactLearn ReactLearn React
-      </a>
-    </header>
-  </div>
+  <StyledWrapper>
+    <h1>123</h1>
+  </StyledWrapper>
 );
 
 export default App;
