@@ -4,7 +4,7 @@ const H1 = styled.h1`
   margin: 0;
   padding: 0;
   display: block;
-  font-size: 6rem;
+  font-size: 8rem;
   color: white;
 `;
 
