@@ -5,7 +5,7 @@ const H1 = styled.h1`
   padding: 0;
   display: block;
   font-size: 8rem;
-  color: #f6efdb;
+  color: grey;
   width: 100%;
   text-align: center;
   position: relative;
@@ -18,7 +18,7 @@ const H1 = styled.h1`
     left: 0;
     width: 100%;
     height: 5px;
-    background-color: #b2aca6;
+    background-color: grey;
     animation: H1AfterAppear 2s ease both;
   }
 
@@ -29,7 +29,7 @@ const H1 = styled.h1`
     left: 0;
     width: 100%;
     height: 5px;
-    background-color: #b2aca6;
+    background-color: grey;
     animation: H1BeforeAppear 2s ease both;
   }
 
@@ -38,7 +38,7 @@ const H1 = styled.h1`
       background-color: transparent;
     }
     100% {
-      background-color: #96c58f;
+      background-color: #6e0f00;
     }
   }
 

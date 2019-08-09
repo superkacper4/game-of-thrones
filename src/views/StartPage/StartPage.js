@@ -4,7 +4,7 @@ import TitlePage from './TitlePage';
 import NavPage from './NavPage';
 
 const StyledStartPage = styled.div`
-  background-color: #c1d7ae;
+  background-color: black;
   margin: 0;
   padding: 0;
 `;

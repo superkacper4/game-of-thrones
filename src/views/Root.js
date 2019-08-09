@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import StartPage from './StartPage/StartPage';
-import AnotherPage from './AnotherPage';
+import AboutPage from './AboutPage';
 import GlobalStyle from '../theme/GlobalStyles';
 
 const Root = () => (
   <Router>
     <GlobalStyle />
     <Route path="/" exact component={StartPage} />
-    <Route path="/Another/" component={AnotherPage} />
+    <Route path="/About/" component={AboutPage} />
   </Router>
 );
 
