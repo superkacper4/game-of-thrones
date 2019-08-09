@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import H1 from '../../components/headers/H1';
 import StartGif from '../../assets/img/start.gif';
+import Arrow from '../../components/Arrow/Arrow';
 
 const StyledTitlePage = styled.div`
   width: 100%;
@@ -39,6 +40,7 @@ const TitlePage = () => (
     <H1>
       BLo<StyledSpan>g</StyledSpan>
     </H1>
+    <Arrow />
   </StyledTitlePage>
 );
 

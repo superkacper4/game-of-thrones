@@ -36,10 +36,10 @@ const StyledH2 = styled(H2)`
   top: 15%;
   color: ${({ delay }) => (delay ? 'white' : '#871200')};
   opacity: 0;
-  animation: namesAnimation 10s linear both infinite;
+  animation: carouselAnimation 10s linear both infinite;
   animation-delay: ${({ delay }) => (delay ? '5s' : '0s')};
 
-  @keyframes namesAnimation {
+  @keyframes carouselAnimation {
     20% {
       opacity: 1;
     }
@@ -55,7 +55,12 @@ const StyledH2 = styled(H2)`
   }
 `;
 
-const namesArr = [<StyledH2>Geralt z Rivii</StyledH2>, <StyledH2 delay>Biały Wilk</StyledH2>];
+const namesArr = [
+  <StyledH2 key="0">Geralt z Rivii</StyledH2>,
+  <StyledH2 key="1" delay>
+    Biały Wilk
+  </StyledH2>,
+];
 
 const NavPage = () => {
   const names = namesArr.map(name => <>{name}</>);

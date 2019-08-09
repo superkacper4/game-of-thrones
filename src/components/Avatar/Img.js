@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Avatar = styled.img`
+const Img = styled.img`
   height: 200px;
   width: 200px;
   border: 2px solid white;
@@ -9,4 +9,4 @@ const Avatar = styled.img`
   animation: OpacityAppear 1.3s ease both;
 `;
 
-export default Avatar;
+export default Img;

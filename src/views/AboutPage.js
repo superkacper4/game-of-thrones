@@ -4,21 +4,42 @@ import H2 from '../components/headers/H2';
 import H3 from '../components/headers/H3';
 import StyledLink from '../components/StyledLink/StyledLink';
 import P from '../components/paragraph/P';
-import Avatar from '../components/Avatar/Avatar';
+import Img from '../components/Avatar/Img';
 
-import AvatarIMG from '../assets/img/avatar.jpg';
+import Avatar1IMG from '../assets/img/avatar1.jpg';
+import Avatar2IMG from '../assets/img/avatar2.jpg';
 
 const StyledAboutPage = styled.div`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   position: relative;
   align-items: center;
   background-color: #260500;
-  padding: 10px;
+  padding: 20px;
 `;
 
+const StyledAvatar = styled(Img)`
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: carouselAnimation 14s ${({ delay }) => (delay ? '7s' : '0s')} linear both infinite;
+`;
+
+const StyledCarousel = styled.div`
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: transparent;
+`;
+
+const avatarArr = [<StyledAvatar src={Avatar1IMG} />, <StyledAvatar src={Avatar2IMG} delay />];
+
 class AboutPage extends React.Component {
+  avatars = avatarArr.map(avatar => <>{avatar}</>);
+
   handleClick = () => {
     window.scrollTo(0, 0);
   };
@@ -27,8 +48,8 @@ class AboutPage extends React.Component {
     return (
       <StyledAboutPage>
         <H2>Kim jestem?</H2>
-        <Avatar src={AvatarIMG} />
-        <H3>Autor BLoga</H3>
+        <StyledCarousel>{this.avatars}</StyledCarousel>
+        <H3>Wiedźmin</H3>
         <P>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
