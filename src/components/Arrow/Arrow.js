@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledArrow = styled.div`
+const StyledArrow = styled.button`
   height: 50px;
   width: 50px;
   font-size: 6rem;
@@ -10,15 +10,20 @@ const StyledArrow = styled.div`
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
+  background: transparent;
+  border: none;
   /* background-color: #6e0f00;
   border: 2px solid grey; */
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: arrowAnimation 4s both ease infinite;
+  animation: arrowAnimation 4s 3s both ease infinite;
 
   @keyframes arrowAnimation {
     0% {
+      transform: translate(-50%, 0);
+    }
+    10% {
       transform: translate(-50%, 0);
     }
     30% {
@@ -26,6 +31,9 @@ const StyledArrow = styled.div`
     }
     70% {
       transform: translate(-50%, 15px);
+    }
+    90% {
+      transform: translate(-50%, 0);
     }
     100% {
       transform: translate(-50%, 0);

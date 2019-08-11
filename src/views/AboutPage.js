@@ -24,6 +24,7 @@ const StyledAvatar = styled(Img)`
   opacity: 0;
   position: absolute;
   left: 50%;
+  margin-bottom: 10px;
   transform: translateX(-50%);
   animation: carouselAnimation 14s ${({ delay }) => (delay ? '7s' : '0s')} linear both infinite;
 `;
