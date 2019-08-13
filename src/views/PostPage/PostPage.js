@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import H2 from '../../components/headers/H2';
 import H3 from '../../components/headers/H3';
 import PostTile from '../../components/PostTile/PostTile';
@@ -7,7 +9,6 @@ import Img from '../../components/Avatar/Img';
 
 import PostsGif from '../../assets/img/posts.gif';
 
-import FirstPostImg from '../../assets/postIMG/1.jpg';
 import P from '../../components/paragraph/P';
 
 const StyledPostPage = styled.div`
@@ -50,40 +51,31 @@ const StyledP = styled(P)`
   padding: 10px;
 `;
 
-const postsArr = [
-  {
-    id: 1,
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    img: FirstPostImg,
-  },
-  {
-    id: 2,
-    content:
-      'XDDDD ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    img: FirstPostImg,
-  },
-];
-
-const PostPage = () => {
-  const posts = postsArr
-    .slice(0)
-    .reverse()
-    .map(post => (
-      <PostTile key={post.id}>
-        <StyledImg src={post.img} />
-        <StyledP>{`${post.content.substring(0, 100)}...`}</StyledP>
-      </PostTile>
-    ));
+const PostPage = ({ posts }) => {
   return (
     <>
       <StyledPostPage>
         <StyledH2>Wpisy</StyledH2>
         <StyledH3>Tutaj będą zamieszczane wpisy z polowań lub innych przygód.</StyledH3>
-        {posts}
+
+        {posts
+          .slice(0)
+          .reverse()
+          .map(post => (
+            <PostTile key={post.id} id={post.id}>
+              <StyledImg src={post.img} />
+              <StyledP>{`${post.content.substring(0, 100)}...`}</StyledP>
+            </PostTile>
+          ))}
       </StyledPostPage>
     </>
   );
 };
 
-export default PostPage;
+const mapStateToProps = ({ posts }) => ({ posts });
+
+PostPage.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default connect(mapStateToProps)(PostPage);
